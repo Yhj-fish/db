@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>光影拾贝：豆瓣高分电影巡礼</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background: url('金色背景.jpg') no-repeat center center/cover fixed; /* 设置一个固定的大背景 */
+            font-family: Arial, sans-serif; /* 字体 */
+            color: #fffbf6; /* 所有字体颜色 */
+            overflow-x: hidden; /* 防止横向滚动条出现 */
+        }
+        /* 第一部分特有的样式 */
+        .part-1 h1,
+        .part-1 h2,
+        .part-1 p,
+        .part-1 ul,
+        .part-1 .category,
+        .part-1 .content p,
+        .part-1 .content li {
+    color: #664637 !important;  /* 使用!important提高优先级，确保第一部分文字颜色设置为不同的颜色 */
+}
+        .part-1 .content p {
+        line-height:2.2; /* 调整此值以增加或减少行间距 */
+}
+        .dropdown-content h4 {
+        color: #664637;
+        text-align: center;
+    }
+        .section {
+            width: 90%; /* 减少宽度以留出四周的空间 */
+            min-height: 80vh; /* 确保至少占据大部分视口高度，同时留出上下空间 */
+            margin: 5vh auto; /* 上下各留出5%的视口高度作为间距 */
+            padding: 20px;
+            box-sizing: border-box; /* 包括padding和border在元素的width和height内 */
+            background-color: rgba(255, 255, 255, 0.8); /* 半透明白色背景以突出内容 */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2); /* 添加阴影效果，使每个部分更突出 */
+            display: flex;
+            justify-content: center; /* 水平居中 */
+            align-items: center; /* 垂直居中 */
+            flex-direction: column; /* 让子元素垂直排列 */
+        }
+
+        /* 第一部分样式 */
+        .part-1 {
+            background: url('金色背景.jpg') no-repeat center center/contain; /* 背景图片按比例缩放以适应容器，并且不铺满 */
+        }
+        /* 第二部分样式 */
+        .part-2 {
+            background: url('肖申克.jpg') no-repeat center center/contain; /* 背景图片按比例缩放以适应容器，并且不铺满 */
+        }
+        /* 第三部分样式 */
+        .part-3 {
+            background: url('霸王别姬.jpg') no-repeat center center/contain; /* 背景图片按比例缩放以适应容器，并且不铺满 */
+        }
+        /* 第四部分样式 */
+        .part-4 {
+            background: url('阿甘正传.jpg') no-repeat center center/contain; /* 背景图片按比例缩放以适应容器，并且不铺满 */
+        }
+        /* 第五部分样式 */
+        .part-5 {
+            background: url('泰坦尼克号.jpg') no-repeat center center/contain; /* 背景图片按比例缩放以适应容器，并且不铺满 */
+        }
+        /* 第六部分样式 */
+        .part-6 {
+            background: url('美丽人生.jpg') no-repeat center center/contain; /* 背景图片按比例缩放以适应容器，并且不铺满 */
+        }
+        /* 第7部分样式 */
+        .part-7 {
+            background: url('千与千寻.jpg') no-repeat center center/contain; /* 背景图片按比例缩放以适应容器，并且不铺满 */
+        }
+        /* 第8部分样式 */
+        .part-8 {
+            background: url('杀手.jpg') no-repeat center center/contain; /* 背景图片按比例缩放以适应容器，并且不铺满 */
+        }
+        /* 第9部分样式 */
+        .part-9 {
+            background: url('楚门.jpg') no-repeat center center/contain; /* 背景图片按比例缩放以适应容器，并且不铺满 */
+        }
+        /* 第10部分样式 */
+        .part-10 {
+            background: url('星际.jpg') no-repeat center center/contain; /* 背景图片按比例缩放以适应容器，并且不铺满 */
+        }
+        /* 第11部分样式 */
+        .part-11 {
+            background: url('盗梦空间.jpg') no-repeat center center/contain; /* 背景图片按比例缩放以适应容器，并且不铺满 */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            text-align: center; /* 大标题居中 */
+        }
+
+        h1, h2, p, ul, .category {
+            text-align: center; /* 确保所有文字内容都居中 */
+            width: 100%; /* 确保宽度占满父容器 */
+        }
+
+        .category {
+            background-color: rgba(206, 184, 168, 0.8); /* 更加淡化的背景颜色 */
+            padding: 10px 20px;
+            margin-bottom: 10px;
+        }
+
+        .category h2 {
+            color: #fffbf6; /* 二级标题颜色 */
+            margin: 0; /* 移除默认的margin */
+            font-size: 1.2em;
+        }
+
+        .content {
+            margin-top: 10px;
+        }
+
+        mark {
+            background-color: rgba(206, 184, 168, 0.8); /* 文字底色高亮 */
+            padding: 2px 5px; /* 增加一些内边距使高亮更加明显 */
+        }
+
+
+        /*关闭按钮样式 */
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        /*下拉内容的基本样式 */
+        .dropdown-content {
+            display: none; /* 默认隐藏 */
+            margin-top: 10px;
+            padding: 6px;
+            padding-bottom: 5px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            position: relative; /* 确保关闭按钮定位正确 */
+        }
+
+        /* 隐藏原始内容 */
+        .container.show-dropdown .content,
+        .container.show-dropdown h2,
+        .container.show-dropdown p {
+        display: none;
+        }
+
+        .text {
+        color: #664637; /* 设置默认的文字颜色 */
+        font-size: 20px; /* 可选：设置字体大小 */
+    }
+        .highlight {
+        background-color: #fff0b3; /* 设置背景颜色为金色 */
+        color: #664637; /* 确保文字颜色不变 */
+        padding: 2px 5px; /* 增加一些内边距使高亮更加明显 */
+        border-radius: 20px; /* 让高亮区域的边缘更圆滑 */
+    }
+    </style>
+</head>
+<body>
+    <!-- 第一部分 -->
+    <div class="section part-1">
+        <div class="container">
+            <!-- 大标题 -->
+            <h2>光影拾贝——豆瓣高分电影巡礼<span class="icon"> 🎞️</span></h2>
+            <p><em>*数据来源于豆瓣电影，统计截至2025年1月30日</em></p>
+
+            <!-- 二级标题及内容 -->
+            <div class="category">
+                <h2><span class="icon">🌟</span> <span class="movie-title">欢迎光临</span><span class="icon"> 🌟</span></h2>
+            </div>
+            <div class="content">
+
+                <p>在光影的宇宙中，每一部电影都是一颗璀璨星辰<br>
+                    欢迎来到<mark>光影拾贝——豆瓣高分电影巡礼</mark>，这里汇聚<mark>豆瓣评分TOP10</mark>电影佳作<br>
+                    从触动心灵的故事到视觉的奇幻盛宴<br>
+                    让我们一同拾贝，探寻电影背后的情感与智慧，在光影交织间，邂逅永恒的感动</p>
+                <div class="text">
+                 <span class="highlight"> <span class="icon"> ✨</span>在这场巡礼中，将展示每部影片的经典画面和一句短评<span class="icon"> ✨</span> </span>
+                </div>
+                <div class="text">
+                 <span class="highlight"><span class="icon"> ✨</span>点击片名和短评 <span class="icon">☝🏻</span> 即可观赏该影片的豆瓣影评词云展览<span class="icon"> ✨</span> </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 第二部分 -->
+<div class="section part-2">
+    <div class="container" onclick="toggleDropdown(this)">
+        <h2>希望让人自由。</h2>
+        <p>《肖申克的救赎》</p>
+    </div>
+    <div class="dropdown-content">
+        <button class="close-btn" onclick="hideDropdown(this)">X</button>
+        <img src="词云图-肖申克.png" alt="豆瓣影评词云展示" style="width:100%;">
+        <h4>《肖申克的救赎》豆瓣影评词云展示<br>9.7分<span class="icon">🌟</span>  1994  美国</h4>
+    </div>
+</div>
+
+    <!-- 第三部分 -->
+    <div class="section part-3">
+        <div class="container" onclick="toggleDropdown(this)">
+            <h2>风华绝代。</h2>
+            <p>《霸王别姬》</p>
+        </div>
+        <div class="dropdown-content">
+            <button class="close-btn" onclick="hideDropdown(this)">X</button>
+            <img src="词云图-霸王别姬.png" alt="豆瓣影评词云展示" style="width:100%;">
+             <h4>《霸王别姬》豆瓣影评词云展示<br>9.6分<span class="icon">🌟</span>  1993  中国大陆 / 中国香港</h4>
+         </div>
+    </div>
+
+    <div class="section part-4">
+         <div class="container" onclick="toggleDropdown(this)">
+            <h2>奇迹每天都在发生。</h2>
+            <p>《阿甘正传》</p>
+        </div>
+        <div class="dropdown-content">
+            <button class="close-btn" onclick="hideDropdown(this)">X</button>
+            <img src="词云图-阿甘正传.png" alt="豆瓣影评词云展示" style="width:100%;">
+            <h4>《阿甘正传》豆瓣影评词云展示<br>9.5分<span class="icon">🌟</span>  1994  美国</h4>
+        </div>
+    </div>
+
+    <div class="section part-5">
+        <div class="container" onclick="toggleDropdown(this)">
+            <h2>失去的才是永恒的。</h2>
+            <p>《泰坦尼克号》</p>
+        </div>
+        <div class="dropdown-content">
+            <button class="close-btn" onclick="hideDropdown(this)">X</button>
+            <img src="词云图-泰坦尼克号.png" alt="豆瓣影评词云展示" style="width:100%;">
+            <h4>《泰坦尼克号》豆瓣影评词云展示<br>9.5分<span class="icon">🌟</span>  1997  美国 / 墨西哥</h4>
+        </div>
+    </div>
+    <div class="section part-6">
+         <div class="container" onclick="toggleDropdown(this)">
+            <h2>最美的谎言。</h2>
+            <p>《美丽人生》</p>
+        </div>
+        <div class="dropdown-content">
+            <button class="close-btn" onclick="hideDropdown(this)">X</button>
+            <img src="词云图-美丽人生.png" alt="豆瓣影评词云展示" style="width:100%;">
+            <h4>《美丽人生》豆瓣影评词云展示<br>9.5分<span class="icon">🌟</span>  1997  意大利</h4>
+        </div>
+    </div>
+
+    <div class="section part-7">
+         <div class="container" onclick="toggleDropdown(this)">
+            <h2>最好的宫崎骏，最好的久石让。</h2>
+            <p>《千与千寻》</p>
+        </div>
+        <div class="dropdown-content">
+            <button class="close-btn" onclick="hideDropdown(this)">X</button>
+            <img src="词云图-千与千寻.png" alt="豆瓣影评词云展示" style="width:100%;">
+            <h4>《千与千寻》豆瓣影评词云展示<br>9.4分<span class="icon">🌟</span>  2001  日本</h4>
+        </div>
+    </div>
+
+    <div class="section part-8">
+         <div class="container" onclick="toggleDropdown(this)">
+            <h2>我所认为最深沉的爱，莫过于分开以后，我将自己活成了你的样子。</h2>
+            <p>《这个杀手不太冷》</p>
+        </div>
+        <div class="dropdown-content">
+            <button class="close-btn" onclick="hideDropdown(this)">X</button>
+            <img src="词云图-杀手.png" alt="豆瓣影评词云展示" style="width:100%;">
+            <h4>《这个杀手不太冷》豆瓣影评词云展示<br>9.4分<span class="icon">🌟</span>  1994  法国 / 美国</h4>
+        </div>
+    </div>
+    <div class="section part-9">
+         <div class="container" onclick="toggleDropdown(this)">
+            <h2>如果再也不能见到你，祝你早安，午安，晚安。</h2>
+            <p>《楚门的世界》</p>
+        </div>
+        <div class="dropdown-content">
+            <button class="close-btn" onclick="hideDropdown(this)">X</button>
+            <img src="词云图-楚门.png" alt="豆瓣影评词云展示" style="width:100%;">
+            <h4>《楚门的世界》豆瓣影评词云展示<br>9.4分<span class="icon">🌟</span>  1998  美国</h4>
+        </div>
+    </div>
+    <div class="section part-10">
+         <div class="container" onclick="toggleDropdown(this)">
+            <h2>爱是一种力量，让我们穿越时空感知它的存在。</h2>
+            <p>《星际穿越》</p>
+        </div>
+        <div class="dropdown-content">
+            <button class="close-btn" onclick="hideDropdown(this)">X</button>
+            <img src="词云图-星际穿越.png" alt="豆瓣影评词云展示" style="width:100%;">
+            <h4>《星际穿越》豆瓣影评词云展示<br>9.4分<span class="icon">🌟</span>  2014  美国 / 英国 / 加拿大</h4>
+        </div>
+    </div>
+
+    <div class="section part-11">
+         <div class="container" onclick="toggleDropdown(this)">
+            <h2>诺兰给了我们一场无法盗取的梦。</h2>
+            <p>《盗梦空间》</p>
+        </div>
+        <div class="dropdown-content">
+            <button class="close-btn" onclick="hideDropdown(this)">X</button>
+            <img src="词云图盗梦空间.png" alt="豆瓣影评词云展示" style="width:100%;">
+            <h4>《盗梦空间》豆瓣影评词云展示<br>9.4分<span class="icon">🌟</span>  2010  美国 / 英国</h4>
+        </div>
+    </div>
+
+
+
+<script>
+function toggleDropdown(container) {
+    // 添加类名以隐藏原始内容
+    container.classList.toggle('show-dropdown');
+
+    let dropdownContent = container.nextElementSibling;
+
+    // 切换下拉内容的可见性
+    if (dropdownContent.style.display === "none" || dropdownContent.style.display === "") {
+        dropdownContent.style.display = "block";
+    } else {
+        dropdownContent.style.display = "none";
+    }
+}
+
+function hideDropdown(closeBtn) {
+    // 获取父元素 .dropdown-content
+    let dropdownContent = closeBtn.parentElement;
+
+    // 隐藏下拉内容
+    dropdownContent.style.display = "none";
+
+    // 移除 .show-dropdown 类名以恢复原始内容
+    dropdownContent.previousElementSibling.classList.remove('show-dropdown');
+}
+</script>
+</body>
+</html>
